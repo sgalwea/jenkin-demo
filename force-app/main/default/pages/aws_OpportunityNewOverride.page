@@ -1,0 +1,29 @@
+<apex:page id="page" standardController="Opportunity" extensions="aws_OpportunityExtension" title="Opportunity Edit" >
+<!-- 
+This page is to override the creation of a new opportunity. 
+
+It uses standard visualforce behavior, plus a small piece of Apex code to set a default value for 
+the Opportunity.StageName field, which overrides the standard save behavior. the code is found in 
+the aws_OpportunityExtension class. 
+ -->
+    <apex:sectionHeader id="head" title="Opportunity Edit" subTitle="New Opportunity" />
+    <apex:pageMessages id="msg"/>
+    <apex:form id="form" >
+        <apex:pageBlock id="block" mode="Edit" title="Opportunity Edit" >
+            <apex:pageBlockButtons id="buttons" >
+                <apex:commandButton action="{!save}" value="Save"/>
+                <apex:commandButton action="{!cancel}" value="Cancel"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="section" title="Opportunity Information" >
+                <apex:inputField id="name" value="{!Opportunity.Name}"/>
+                <apex:inputField id="acctId" required="true" value="{!Opportunity.AccountId}"/>
+                <apex:inputField id="amount" required="true" value="{!Opportunity.Amount}"/>
+                <apex:inputField id="closedate" value="{!Opportunity.CloseDate}"/>
+                <apex:selectRadio id="type" value="{!Opportunity.Type}">
+                    <apex:selectOption itemValue="Existing Business" itemLabel="Existing"/>
+                    <apex:selectOption itemValue="New Business" itemLabel="New"/>
+                </apex:selectRadio>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

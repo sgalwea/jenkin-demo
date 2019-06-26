@@ -1,0 +1,11 @@
+<apex:page >
+  <font size="3">
+    <br/>
+    <b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;This tab is no longer active.</b><br/>
+
+    <ul>Please find course survey links in either of these places:<br/>
+    <li>Home tab</li>
+    <li>"Thanks for Attending" page near end of Student Guide in Mimeo</li>
+    </ul>
+  </font>
+</apex:page>
